@@ -80,6 +80,8 @@ def draw():
         up()
         goto(x + 2, y)
         color('black')
+        if tiles[mark] < 10:
+            goto(x + 15, y)
         write(tiles[mark], font=('Arial', 30, 'normal'))
     
     goto(-200, 200)
