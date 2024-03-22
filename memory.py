@@ -88,6 +88,12 @@ def draw():
     update()
     ontimer(draw, 100)
 
+def detect_all_revealed():
+    """Detect when all tiles are revealed."""
+    for i in range(64):
+        if hide[i]:
+            return False
+    return True
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
@@ -95,5 +101,6 @@ addshape(car)
 hideturtle()
 tracer(False)
 onscreenclick(tap)
+detect_all_revealed()
 draw()
 done()
